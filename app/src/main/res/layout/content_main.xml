@@ -16,8 +16,7 @@
             android:text="... player two"
             android:ems="10"
             android:id="@+id/playerTwoNameText"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="18dp"
             app:layout_constraintTop_toBottomOf="@+id/playerOneNameText"/>
     <EditText
@@ -27,8 +26,7 @@
             android:text="... player three"
             android:ems="10"
             android:id="@+id/playerThreeNameText"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="18dp"
             app:layout_constraintTop_toBottomOf="@+id/playerTwoNameText"/>
     <EditText
@@ -38,19 +36,17 @@
             android:text="... player four"
             android:ems="10"
             android:id="@+id/playerFourNameText"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="18dp"
             app:layout_constraintTop_toBottomOf="@+id/playerThreeNameText"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:text="... player one"
+            android:text="... player five"
             android:ems="10"
             android:id="@+id/playerFiveNameText"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="18dp"
             app:layout_constraintTop_toBottomOf="@+id/playerFourNameText"/>
     <TextView
@@ -68,17 +64,16 @@
             android:text="... player one"
             android:ems="10"
             android:id="@+id/playerOneNameText" android:layout_marginTop="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/enteryPlayersLabel" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/enteryPlayersLabel"
+            android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent"/>
-    <Button
-            android:text="Start Game"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/startGameButton" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/playerFiveNameText"
-            app:layout_constraintVertical_bias="0.257"/>
+            android:clickable="true" app:srcCompat="@android:drawable/ic_media_play"
+            android:id="@+id/startGameButton"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
