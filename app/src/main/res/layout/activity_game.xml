@@ -1,11 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                                                    android:layout_height="match_parent">
 
-    <TextView
-            android:text="Just some text"
+    <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" tools:layout_editor_absoluteY="341dp"
-            tools:layout_editor_absoluteX="85dp" android:id="@+id/textView" android:textSize="36sp"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/button2" android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/playerFiveScoreText" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp" android:text="@string/back_button_label"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/roundObjectiveLabel"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:text="Objective" android:layout_marginTop="15dp" android:textSize="18sp"
+            android:textAlignment="center"/>
+    <TextView
+            android:text="@string/player_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerColumnLabel"
+            app:layout_constraintStart_toStartOf="@+id/playerTwoNameLabel"
+            app:layout_constraintEnd_toEndOf="@+id/playerTwoNameLabel"
+            app:layout_constraintTop_toTopOf="@+id/scoreColumnLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/scoreColumnLabel"/>
+    <TextView
+            android:text="@string/score_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scoreColumnLabel" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/roundObjectiveLabel"
+            app:layout_constraintStart_toStartOf="@+id/playerOneScoreText"
+            app:layout_constraintEnd_toEndOf="@+id/playerOneScoreText" app:layout_constraintHorizontal_bias="0.509"/>
+    <TextView
+            android:text="@string/total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/totalColumnLabel"
+            app:layout_constraintStart_toStartOf="@+id/playerOneTotalLabel"
+            app:layout_constraintEnd_toEndOf="@+id/playerOneTotalLabel"
+            app:layout_constraintTop_toTopOf="@+id/scoreColumnLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/scoreColumnLabel"/>
+    <TextView
+            android:text="PlayerOneName"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerOneNameLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" android:lines="2"
+            android:textAlignment="center" app:layout_constraintTop_toTopOf="@+id/playerOneScoreText"
+            app:layout_constraintBottom_toBottomOf="@+id/playerOneScoreText"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/playerOneScoreText" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/scoreColumnLabel"
+            app:layout_constraintStart_toEndOf="@+id/playerTwoNameLabel" android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/playerOneTotalLabel"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <TextView
+            android:text="PlayerOneTotal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerOneTotalLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:lines="2" android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="@+id/playerOneScoreText"
+            app:layout_constraintBottom_toBottomOf="@+id/playerOneScoreText"/>
+    <TextView
+            android:text="PlayerTwoName"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerTwoNameLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" android:lines="2"
+            android:textAlignment="center" app:layout_constraintTop_toTopOf="@+id/playerTwoScoreText"
+            app:layout_constraintBottom_toBottomOf="@+id/playerTwoScoreText"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/playerTwoScoreText" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/playerOneScoreText"
+            app:layout_constraintStart_toEndOf="@+id/playerTwoNameLabel" android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/playerTwoTotalLabel"
+            app:layout_constraintHorizontal_bias="1.0"/>
+    <TextView
+            android:text="PlayerTwoTotal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerTwoTotalLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:lines="2" android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="@+id/playerTwoScoreText"
+            app:layout_constraintBottom_toBottomOf="@+id/playerTwoScoreText"/>
+    <TextView
+            android:text="PlayerThreeName"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerThreeNameLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" android:lines="2"
+            android:textAlignment="center" app:layout_constraintTop_toTopOf="@+id/playerThreeScoreText"
+            app:layout_constraintBottom_toBottomOf="@+id/playerThreeScoreText"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/playerThreeScoreText" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/playerTwoScoreText"
+            app:layout_constraintStart_toEndOf="@+id/playerThreeNameLabel" android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/playerThreeTotalLabel"
+            app:layout_constraintHorizontal_bias="1.0"/>
+    <TextView
+            android:text="PlayerThreeTotal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerThreeTotalLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:lines="2" android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="@+id/playerThreeScoreText"
+            app:layout_constraintBottom_toBottomOf="@+id/playerThreeScoreText"/>
+    <TextView
+            android:text="PlayerFourName"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerFourNameLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" android:lines="2"
+            android:textAlignment="center" app:layout_constraintTop_toTopOf="@+id/playerFourScoreText"
+            app:layout_constraintBottom_toBottomOf="@+id/playerFourScoreText"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/playerFourScoreText" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/playerThreeScoreText"
+            app:layout_constraintStart_toEndOf="@+id/playerFourNameLabel" android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/playerFourTotalLabel"
+            app:layout_constraintHorizontal_bias="1.0"/>
+    <TextView
+            android:text="PlayerFourTotal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerFourTotalLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:lines="2" android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="@+id/playerFourScoreText"
+            app:layout_constraintBottom_toBottomOf="@+id/playerFourScoreText"/>
+    <TextView
+            android:text="PlayerFiveName"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerFiveNameLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" android:lines="2"
+            android:textAlignment="center" app:layout_constraintTop_toTopOf="@+id/playerFiveScoreText"
+            app:layout_constraintBottom_toBottomOf="@+id/playerFiveScoreText"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/playerFiveScoreText" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/playerFourScoreText"
+            app:layout_constraintStart_toEndOf="@+id/playerFiveNameLabel" android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/playerFiveTotalLabel"
+            app:layout_constraintHorizontal_bias="1.0"/>
+    <TextView
+            android:text="PlayerFiveTotal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerFiveTotalLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:lines="2" android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="@+id/playerFiveScoreText"
+            app:layout_constraintBottom_toBottomOf="@+id/playerFiveScoreText"/>
+    <Button
+            android:text="@string/next_button_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button" android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/playerFiveScoreText" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
