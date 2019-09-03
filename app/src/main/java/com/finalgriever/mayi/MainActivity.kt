@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import com.finalgriever.mayi.models.GameState
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -23,7 +24,13 @@ class MainActivity : AppCompatActivity() {
                 playerNameEntryErrorsText.text = errors.joinToString("\n")
                 playerNameEntryErrorsText.visibility = View.VISIBLE
             } else {
-                // Set the current state of the game
+                GameState.startGame()
+                GameState.addPlayer(playerOneNameText.text.toString())
+                GameState.addPlayer(playerTwoNameText.text.toString())
+                GameState.addPlayer(playerThreeNameText.text.toString())
+                GameState.addPlayer(playerFourNameText.text.toString())
+                GameState.addPlayer(playerFiveNameText.text.toString())
+
                 startActivity(Intent(this@MainActivity, GameActivity::class.java))
             }
         }

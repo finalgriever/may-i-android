@@ -6,7 +6,7 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button2" android:layout_marginTop="30dp"
+            android:id="@+id/previousRoundButton" android:layout_marginTop="30dp"
             app:layout_constraintTop_toBottomOf="@+id/playerFiveScoreText" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="30dp" android:text="@string/back_button_label"/>
     <TextView
@@ -22,8 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/playerColumnLabel"
-            app:layout_constraintStart_toStartOf="@+id/playerTwoNameLabel"
-            app:layout_constraintEnd_toEndOf="@+id/playerTwoNameLabel"
+            app:layout_constraintStart_toStartOf="@+id/playerOneNameLabel"
+            app:layout_constraintEnd_toEndOf="@+id/playerOneNameLabel"
             app:layout_constraintTop_toTopOf="@+id/scoreColumnLabel"
             app:layout_constraintBottom_toBottomOf="@+id/scoreColumnLabel"/>
     <TextView
@@ -59,9 +59,8 @@
             android:ems="10"
             android:id="@+id/playerOneScoreText" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/scoreColumnLabel"
-            app:layout_constraintStart_toEndOf="@+id/playerTwoNameLabel" android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/playerOneTotalLabel"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintStart_toEndOf="@+id/playerOneNameLabel" android:layout_marginStart="8dp"/>
     <TextView
             android:text="PlayerOneTotal"
             android:layout_width="80dp"
@@ -192,7 +191,15 @@
             android:text="@string/next_button_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button" android:layout_marginTop="30dp"
+            android:id="@+id/nextRoundButton" android:layout_marginTop="30dp"
             app:layout_constraintTop_toBottomOf="@+id/playerFiveScoreText" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="30dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/errorTextView" android:textColor="#B40000"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/previousRoundButton"
+            app:layout_constraintStart_toEndOf="@+id/previousRoundButton" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/nextRoundButton" android:layout_marginEnd="8dp"
+            android:singleLine="false"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
