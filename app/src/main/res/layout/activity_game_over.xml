@@ -5,6 +5,58 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".GameOver">
+        tools:context=".GameOverActivity">
 
+    <TextView
+            android:text="Congratulations!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/congratulationsLabel" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="Winner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/winnerLabel" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/congratulationsLabel"
+            app:layout_constraintStart_toStartOf="@+id/congratulationsLabel"
+            app:layout_constraintEnd_toEndOf="@+id/congratulationsLabel"/>
+    <TextView
+            android:text="Second Place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/secondPlaceLabel" app:layout_constraintStart_toStartOf="@+id/winnerLabel"
+            app:layout_constraintEnd_toEndOf="@+id/winnerLabel" android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/winnerLabel"/>
+    <TextView
+            android:text="Third Place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/thirdPlaceLabel" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/secondPlaceLabel"
+            app:layout_constraintEnd_toEndOf="@+id/secondPlaceLabel"
+            app:layout_constraintStart_toStartOf="@+id/secondPlaceLabel"/>
+    <TextView
+            android:text="Fourth Place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fourthPlaceLabel" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/thirdPlaceLabel"
+            app:layout_constraintStart_toStartOf="@+id/thirdPlaceLabel"
+            app:layout_constraintEnd_toEndOf="@+id/thirdPlaceLabel"/>
+    <TextView
+            android:text="Fifth Place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fifthPlaceLabel" app:layout_constraintEnd_toEndOf="@+id/fourthPlaceLabel"
+            app:layout_constraintStart_toStartOf="@+id/fourthPlaceLabel" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/fourthPlaceLabel"/>
+    <Button
+            android:text="Start New Game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/restartGameButton" app:layout_constraintStart_toStartOf="@+id/fifthPlaceLabel"
+            app:layout_constraintEnd_toEndOf="@+id/fifthPlaceLabel" android:layout_marginTop="44dp"
+            app:layout_constraintTop_toBottomOf="@+id/fifthPlaceLabel" app:layout_constraintHorizontal_bias="0.506"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

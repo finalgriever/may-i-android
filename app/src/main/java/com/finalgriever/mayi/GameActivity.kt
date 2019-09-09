@@ -1,7 +1,7 @@
 package com.finalgriever.mayi
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -55,7 +55,7 @@ class GameActivity : AppCompatActivity() {
 
     fun updateUI() {
         if (GameState.gameFinished()) {
-            // Navigate to game finished screen
+            startActivity(Intent(this@GameActivity, GameOverActivity::class.java))
             return
         }
         roundObjectiveLabel.text = GameState.currentRoundName()

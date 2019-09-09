@@ -2,9 +2,10 @@ package com.finalgriever.mayi.models
 
 data class Round(val objective: String, val scores: MutableMap<Int, Int> = mutableMapOf())
 data class Player(val name: String, val number: Int)
+data class FinalScore(val name: String, val score: Int, val position: Int)
 
 object GameState {
-    public val NO_SCORE = -1
+    val NO_SCORE = -1
     private val roundObjectives = listOf("Two Triples", "One Triple and One Straight", "Two Straights", "Three Triples", "Two Triples and One Straight", "One Triple and Two Straights", "Three Straights")
     private val rounds = mutableListOf<Round>()
         get() = field
@@ -65,7 +66,7 @@ object GameState {
     fun nextRound() {
         validateRound()
         if (errors.size != 0) return
-        if (currentRound >= 12) gameFinished = true
+        if (currentRound == rounds.lastIndex) gameFinished = true
         else currentRound++
     }
 
@@ -101,6 +102,21 @@ object GameState {
             }
         }
         return totals
+    }
+
+    fun finalScores(): List<FinalScore> {
+        val totals = totalScores()
+        val result = mutableListOf<FinalScore>()
+        for (scoreIndex in totals.indices) {
+            var position = 1
+            for (comparatorIndex in totals.indices) {
+                if (comparatorIndex == scoreIndex) continue
+                if (totals[scoreIndex] >= totals[comparatorIndex]) position++
+            }
+            result.add(FinalScore(players[scoreIndex].name, totals[scoreIndex], position))
+        }
+        result.sortBy { it.position }
+        return result
     }
 
     fun gameErrors() : List<String> {
